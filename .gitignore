@@ -1,9 +1,9 @@
 /.gradle/
 /bin/
+/build/
+/log/
 
 # Eclipse
-.settings
+/.settings/
 .classpath
 .project
-
-/build/

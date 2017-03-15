@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.2.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 /*
@@ -23,40 +23,40 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'utsusemi'
-	version = '0.0.1-SNAPSHOT'
+    baseName = 'utsusemi'
+    version = '0.0.1-SNAPSHOT'
 }
 
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
-	// Use jcenter for resolving your dependencies.
-	// You can declare any Maven/Ivy/file repository here.
-	jcenter()
+    mavenCentral()
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	
-	compile ('org.apache.logging.log4j:log4j-core:2.8.1') {transitive = false}
-	compile ('org.apache.logging.log4j:log4j-api:2.8.1') {transitive = false}
-	compile ('org.apache.logging.log4j:log4j-slf4j-impl:2.8.1') {transitive = false}
-	compile ('org.slf4j:slf4j-api:1.7.24') {transitive = false}
+    compile('org.springframework.boot:spring-boot-starter')
 
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile ('org.apache.logging.log4j:log4j-core:2.8.1') {transitive = false}
+    compile ('org.apache.logging.log4j:log4j-api:2.8.1') {transitive = false}
+    compile ('org.apache.logging.log4j:log4j-slf4j-impl:2.8.1') {transitive = false}
+    compile ('org.slf4j:slf4j-api:1.7.24') {transitive = false}
 
-	// This dependency is exported to consumers, that is to say found on their compile classpath.
-	api 'org.apache.commons:commons-math3:3.6.1'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	// This dependency is used internally, and not exposed to consumers on their own compile classpath.
-	implementation 'com.google.guava:guava:20.0'
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    api 'org.apache.commons:commons-math3:3.6.1'
 
-	// Use the latest Groovy version for Spock testing
-	testImplementation 'org.codehaus.groovy:groovy-all:2.4.7'
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:20.0'
 
-	// Use the awesome Spock testing and specification framework even with Java
-	testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
-	testImplementation 'junit:junit:4.12'
+    // Use the latest Groovy version for Spock testing
+    testImplementation 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    // Use the awesome Spock testing and specification framework even with Java
+    testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testImplementation 'junit:junit:4.12'
 }
 
