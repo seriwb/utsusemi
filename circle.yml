@@ -5,4 +5,4 @@ machine:
 
 test: 
   override:
-    - ./gradlew test coveralls
+    - ./gradlew test jacocoTestReport coveralls
