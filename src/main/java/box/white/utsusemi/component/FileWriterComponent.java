@@ -11,19 +11,19 @@ import box.white.utsusemi.UseInstance;
 public class FileWriterComponent {
 
     private final FileWriter writer;
-    
+
     private FileWriterComponent(final String fileName) throws IOException {
         writer = new FileWriter(fileName);
     }
-    
+
     private void close() throws IOException {
         writer.close();
     }
-    
+
     public void write(final String message) throws IOException {
         writer.write(message);
     }
-    
+
     /**
      * ファイル書き込み処理を行う
      * 
@@ -33,9 +33,8 @@ public class FileWriterComponent {
      */
     public static void use(
             final String fileName,
-            final UseInstance<FileWriterComponent, IOException> block)
-    throws IOException {
-        
+            final UseInstance<FileWriterComponent, IOException> block) throws IOException {
+
         final FileWriterComponent instance = new FileWriterComponent(fileName);
         try {
             block.accept(instance);

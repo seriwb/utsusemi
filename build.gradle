@@ -43,16 +43,21 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter')
     //compile('org.yaml:snakeyaml:1.18')
     compile('org.freemarker:freemarker:2.3.25-incubating')
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
 
+    // logging
     compile('org.apache.logging.log4j:log4j-core:2.8.1') {transitive = false}
     compile('org.apache.logging.log4j:log4j-api:2.8.1') {transitive = false}
     compile('org.apache.logging.log4j:log4j-slf4j-impl:2.8.1') {transitive = false}
     compile('org.slf4j:slf4j-api:1.7.24') {transitive = false}
 
+    // JDBC libraries
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.0.0'
+    compile group: 'com.oracle', name: 'ojdbc6', version: '12.1.0.1-atlassian-hosted'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.16.1'
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
-    //testCompile('org.eluder.coveralls:coveralls-maven-plugin:4.3.0')
-    //testCompile('org.jacoco:jacoco-maven-plugin:0.7.9')
-    
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
@@ -76,3 +81,4 @@ jacocoTestReport {
     }
 }
 
+jacocoTestReport.dependsOn test
